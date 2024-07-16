@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
+import { ImUser } from "react-icons/im";
 
 function AboutCard() {
   return (
@@ -8,33 +8,26 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
-            <br />
-            I am currently employed as a software developer at Juspay.
-            <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            <span className="purple"> Hyperial</span> is a material management application designed to help companies and organizations manage their material inventory <span className="purple"> efficiently</span> and <span className="purple"> effectively</span>. This application provides various features that make it easier to manage, monitor and track materials, so that users can optimize operations and reduce costs.
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            <br />
+            This website has 3 user roles in it
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImUser /> Admin
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImUser /> Project Manager
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImUser /> Vendors
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <br />
+          <br />
+          <br />
         </blockquote>
       </Card.Body>
     </Card>

@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
+import logo from "../Assets/hyperial_logo_only.png";
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineLogin,
 } from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -38,8 +37,9 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/" className="d-flex align-items-center">
           <img src={logo} className="img-fluid logo" alt="brand" />
+          <span style={{ marginLeft: "30px", fontSize: "30px", color: "#5fe1f8" }}>Hyperial</span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -83,28 +83,22 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
+              <Dropdown>
+                <Dropdown.Toggle id="dropdown-basic" className="login-dropdown">
+                  <AiOutlineLogin style={{ marginBottom: "2px" }} /> Login
+                </Dropdown.Toggle>
 
-            <Nav.Item>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="https://admin.hyperial.my.id/loginAdmin">Admin</Dropdown.Item>
+                  <Dropdown.Item href="https://user.hyperial.my.id/login">Vendor</Dropdown.Item>
+                  <Dropdown.Item href="https://user.hyperial.my.id/login">Project Manager</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://github.com/bethoventigauw"
                 target="_blank"
                 className="fork-btn-inner"
               >
